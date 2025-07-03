@@ -1,6 +1,6 @@
 # 放大器
 
-![image-20241121141558124](E:\study\typora\some_record\GS8632-SR\assets\image-20241121141558124.png)
+![image-20241121141558124](.\assets\image-20241121141558124.png)
 
 GS8632C-SR是一种运算放大器（Operational Amplifier，简称Op-Amp），其工作原理基于基本的运算放大器设计。运算放大器是一种高增益的差分放大器，具有两个输入端（非反相输入端和反相输入端）和一个输出端。GS8632C-SR的工作原理可以概括为以下几个关键点：
 

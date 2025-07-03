@@ -1,1 +1,1 @@
-![image-20241023084822602](E:\study\typora\some_record\LCD\assets\image-20241023084822602.png)
+![image-20241023084822602](.\assets\image-20241023084822602.png)
