@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "D:\\study\\daima\\file_exe\\${fileBasenameNoExtension}.exe"
+                "${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
