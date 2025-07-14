@@ -1,5 +1,5 @@
-// 游戏类
-class AngryBirdsGame {
+// 游戏主类
+window.AngryBirdsGame = class AngryBirdsGame {
     constructor() {
         this.canvas = document.getElementById('gameCanvas');
         this.ctx = this.canvas.getContext('2d');
@@ -10,6 +10,7 @@ class AngryBirdsGame {
         this.birds = [];
         this.pigs = [];
         this.obstacles = [];
+        this.explosions = []; // 爆炸效果数组
         this.currentBird = null;
         this.isAiming = false;
         this.isDragging = false;
@@ -182,34 +183,7 @@ class AngryBirdsGame {
     }
     
     createLevelStructure() {
-        const levelConfigs = [
-            // 第1关
-            [
-                { type: 'pig', x: 800, y: 450 },
-                { type: 'obstacle', x: 750, y: 400, width: 100, height: 100 },
-                { type: 'pig', x: 950, y: 450 }
-            ],
-            // 第2关
-            [
-                { type: 'obstacle', x: 700, y: 350, width: 20, height: 150 },
-                { type: 'obstacle', x: 800, y: 350, width: 20, height: 150 },
-                { type: 'obstacle', x: 720, y: 340, width: 80, height: 20 },
-                { type: 'pig', x: 760, y: 450 },
-                { type: 'pig', x: 900, y: 450 }
-            ],
-            // 第3关及以上
-            [
-                { type: 'obstacle', x: 650, y: 300, width: 20, height: 200 },
-                { type: 'obstacle', x: 750, y: 300, width: 20, height: 200 },
-                { type: 'obstacle', x: 850, y: 300, width: 20, height: 200 },
-                { type: 'obstacle', x: 670, y: 290, width: 180, height: 20 },
-                { type: 'pig', x: 700, y: 450 },
-                { type: 'pig', x: 760, y: 450 },
-                { type: 'pig', x: 820, y: 450 }
-            ]
-        ];
-        
-        const config = levelConfigs[Math.min(this.level - 1, levelConfigs.length - 1)];
+        const config = window.levelConfigs[Math.min(this.level - 1, window.levelConfigs.length - 1)];
         
         config.forEach(item => {
             if (item.type === 'pig') {
@@ -233,6 +207,21 @@ class AngryBirdsGame {
         if (this.currentBird && this.currentBird.launched) {
             this.currentBird.update();
             this.checkCollisions(this.currentBird);
+        }
+        
+        // 更新爆炸效果
+        if (this.explosions && this.explosions.length > 0) {
+            this.explosions.forEach(explosion => {
+                if (explosion.active) {
+                    explosion.alpha -= 0.01; // 爆炸效果逐渐消失
+                    if (explosion.alpha <= 0) {
+                        explosion.active = false;
+                    }
+                }
+            });
+            
+            // 清理不活跃的爆炸效果
+            this.explosions = this.explosions.filter(explosion => explosion.active);
         }
         
         // 检查游戏状态
@@ -262,38 +251,95 @@ class AngryBirdsGame {
             bird.vx *= -0.8;
         }
         
-        // 检查与猪的碰撞
+        // 检查与猪的碰撞（无论猪是否在障碍物内部）
+        let pigHit = false;
         this.pigs.forEach((pig, index) => {
             if (this.isColliding(bird, pig)) {
                 this.score += 100;
                 this.updateScore();
+                
+                // 创建爆炸效果
+                this.createExplosion(pig.x, pig.y, '#90EE90', 40);
+                
                 this.pigs.splice(index, 1);
                 this.showMessage('击中！+100分');
                 
                 // 添加撞击效果
                 bird.vx *= 0.5;
                 bird.vy *= 0.5;
+                pigHit = true;
             }
         });
+        
+        // 如果已经击中猪，不再检查障碍物碰撞
+        if (pigHit) return;
         
         // 检查与障碍物的碰撞
         this.obstacles.forEach(obstacle => {
             if (this.isBirdObstacleColliding(bird, obstacle)) {
-                // 简单的碰撞响应
-                if (bird.x < obstacle.x) {
-                    bird.x = obstacle.x - bird.radius;
-                    bird.vx *= -0.6;
-                } else if (bird.x > obstacle.x + obstacle.width) {
-                    bird.x = obstacle.x + obstacle.width + bird.radius;
-                    bird.vx *= -0.6;
+                // 检查障碍物内是否有猪
+                let pigInObstacle = false;
+                this.pigs.forEach((pig, index) => {
+                    if (this.isPigInObstacle(pig, obstacle)) {
+                        // 如果障碍物内有猪，小鸟的速度只略微减小，增强穿透能力
+                        bird.vx *= 0.9;
+                        bird.vy *= 0.9;
+                        pigInObstacle = true;
+                        
+                        // 如果小鸟速度过低，给予额外的推力以确保能击中猪
+                        if (Math.abs(bird.vx) < 3 && Math.abs(bird.vy) < 3) {
+                            const dx = pig.x - bird.x;
+                            const dy = pig.y - bird.y;
+                            const angle = Math.atan2(dy, dx);
+                            bird.vx += Math.cos(angle) * 2;
+                            bird.vy += Math.sin(angle) * 2;
+                        }
+                    }
+                });
+                
+                // 计算小鸟的速度大小，用于伤害计算
+                const birdSpeed = Math.sqrt(bird.vx * bird.vx + bird.vy * bird.vy);
+                
+                // 对障碍物造成伤害
+                const damage = Math.min(birdSpeed * 5, 50); // 最大伤害50
+                obstacle.health -= damage;
+                
+                // 如果障碍物被摧毁
+                if (obstacle.health <= 0) {
+                    // 从障碍物数组中移除
+                    const index = this.obstacles.indexOf(obstacle);
+                    if (index > -1) {
+                        // 创建爆炸效果
+                        const centerX = obstacle.x + obstacle.width / 2;
+                        const centerY = obstacle.y + obstacle.height / 2;
+                        this.createExplosion(centerX, centerY, '#8B4513', 50);
+                        
+                        this.obstacles.splice(index, 1);
+                        this.score += 50; // 摧毁障碍物奖励
+                        this.updateScore();
+                        this.showMessage('障碍物摧毁！+50分');
+                    }
+                    return; // 障碍物已被摧毁，不需要继续处理碰撞
                 }
                 
-                if (bird.y < obstacle.y) {
-                    bird.y = obstacle.y - bird.radius;
-                    bird.vy *= -0.6;
-                } else if (bird.y > obstacle.y + obstacle.height) {
-                    bird.y = obstacle.y + obstacle.height + bird.radius;
-                    bird.vy *= -0.6;
+                // 如果障碍物内没有猪，正常反弹
+                if (!pigInObstacle) {
+                    // 简单的碰撞响应
+                    if (bird.x < obstacle.x) {
+                        bird.x = obstacle.x - bird.radius;
+                        bird.vx *= -0.6;
+                    } else if (bird.x > obstacle.x + obstacle.width) {
+                        bird.x = obstacle.x + obstacle.width + bird.radius;
+                        bird.vx *= -0.6;
+                    }
+                    
+                    if (bird.y < obstacle.y) {
+                        bird.y = obstacle.y - bird.radius;
+                        bird.vy *= -0.6;
+                    } else if (bird.y > obstacle.y + obstacle.height) {
+                        bird.y = obstacle.y + obstacle.height + bird.radius;
+                        bird.vy *= -0.6;
+                    }
                 }
             }
         });
@@ -311,6 +357,14 @@ class AngryBirdsGame {
                bird.x - bird.radius < obstacle.x + obstacle.width &&
                bird.y + bird.radius > obstacle.y &&
                bird.y - bird.radius < obstacle.y + obstacle.height;
+    }
+    
+    isPigInObstacle(pig, obstacle) {
+        // 检查猪是否在障碍物内部或与障碍物重叠
+        return pig.x + pig.radius > obstacle.x &&
+               pig.x - pig.radius < obstacle.x + obstacle.width &&
+               pig.y + pig.radius > obstacle.y &&
+               pig.y - pig.radius < obstacle.y + obstacle.height;
     }
     
     checkGameState() {
@@ -369,6 +423,37 @@ class AngryBirdsGame {
         }, 2000);
     }
     
+    createExplosion(x, y, color = '#FF9800', size = 30) {
+        // 创建爆炸效果
+        const explosion = {
+            x,
+            y,
+            color,
+            size,
+            particles: [],
+            alpha: 1,
+            active: true
+        };
+        
+        // 创建爆炸粒子
+        for (let i = 0; i < 20; i++) {
+            const angle = Math.random() * Math.PI * 2;
+            const speed = 1 + Math.random() * 3;
+            explosion.particles.push({
+                x: 0,
+                y: 0,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                size: 2 + Math.random() * 3,
+                alpha: 1
+            });
+        }
+        
+        // 添加到爆炸数组
+        if (!this.explosions) this.explosions = [];
+        this.explosions.push(explosion);
+    }
+    
     render() {
         // 清空画布
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -402,6 +487,48 @@ class AngryBirdsGame {
         
         // 绘制剩余小鸟
         this.drawRemainingBirds();
+        
+        // 绘制爆炸效果
+        this.drawExplosions();
+    }
+    
+    drawExplosions() {
+        if (!this.explosions) return;
+        
+        this.explosions.forEach((explosion, index) => {
+            if (!explosion.active) return;
+            
+            explosion.alpha -= 0.02; // 爆炸效果逐渐消失
+            
+            if (explosion.alpha <= 0) {
+                explosion.active = false;
+                return;
+            }
+            
+            // 绘制爆炸粒子
+            explosion.particles.forEach(particle => {
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                particle.alpha = explosion.alpha;
+                
+                this.ctx.globalAlpha = particle.alpha;
+                this.ctx.fillStyle = explosion.color;
+                this.ctx.beginPath();
+                this.ctx.arc(
+                    explosion.x + particle.x,
+                    explosion.y + particle.y,
+                    particle.size,
+                    0,
+                    Math.PI * 2
+                );
+                this.ctx.fill();
+            });
+            
+            this.ctx.globalAlpha = 1;
+        });
+        
+        // 清理不活跃的爆炸效果
+        this.explosions = this.explosions.filter(explosion => explosion.active);
     }
     
     drawBackground() {
@@ -508,161 +635,3 @@ class AngryBirdsGame {
         requestAnimationFrame(() => this.gameLoop());
     }
 }
-
-// 小鸟类
-class Bird {
-    constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.radius = 20;
-        this.color = color;
-        this.vx = 0;
-        this.vy = 0;
-        this.launched = false;
-    }
-    
-    update() {
-        if (this.launched) {
-            this.x += this.vx;
-            this.y += this.vy;
-            this.vy += 0.5; // 重力
-            this.vx *= 0.998; // 空气阻力
-        }
-    }
-    
-    draw(ctx) {
-        // 小鸟身体
-        ctx.fillStyle = this.color;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // 眼睛
-        ctx.fillStyle = 'white';
-        ctx.beginPath();
-        ctx.arc(this.x - 7, this.y - 5, 5, 0, Math.PI * 2);
-        ctx.arc(this.x + 7, this.y - 5, 5, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.fillStyle = 'black';
-        ctx.beginPath();
-        ctx.arc(this.x - 7, this.y - 5, 2, 0, Math.PI * 2);
-        ctx.arc(this.x + 7, this.y - 5, 2, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // 嘴巴
-        ctx.fillStyle = 'orange';
-        ctx.beginPath();
-        ctx.moveTo(this.x, this.y + 3);
-        ctx.lineTo(this.x - 8, this.y + 8);
-        ctx.lineTo(this.x + 8, this.y + 8);
-        ctx.closePath();
-        ctx.fill();
-        
-        // 眉毛（愤怒表情）
-        ctx.strokeStyle = 'black';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(this.x - 12, this.y - 10);
-        ctx.lineTo(this.x - 2, this.y - 15);
-        ctx.moveTo(this.x + 12, this.y - 10);
-        ctx.lineTo(this.x + 2, this.y - 15);
-        ctx.stroke();
-    }
-}
-
-// 猪类
-class Pig {
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.radius = 25;
-    }
-    
-    draw(ctx) {
-        // 猪身体
-        ctx.fillStyle = '#90EE90';
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // 边框
-        ctx.strokeStyle = '#228B22';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        
-        // 眼睛
-        ctx.fillStyle = 'white';
-        ctx.beginPath();
-        ctx.arc(this.x - 8, this.y - 5, 4, 0, Math.PI * 2);
-        ctx.arc(this.x + 8, this.y - 5, 4, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.fillStyle = 'black';
-        ctx.beginPath();
-        ctx.arc(this.x - 8, this.y - 5, 2, 0, Math.PI * 2);
-        ctx.arc(this.x + 8, this.y - 5, 2, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // 鼻子
-        ctx.fillStyle = '#32CD32';
-        ctx.beginPath();
-        ctx.ellipse(this.x, this.y + 3, 6, 4, 0, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // 鼻孔
-        ctx.fillStyle = 'black';
-        ctx.beginPath();
-        ctx.arc(this.x - 2, this.y + 3, 1, 0, Math.PI * 2);
-        ctx.arc(this.x + 2, this.y + 3, 1, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // 耳朵
-        ctx.fillStyle = '#90EE90';
-        ctx.beginPath();
-        ctx.arc(this.x - 15, this.y - 15, 6, 0, Math.PI * 2);
-        ctx.arc(this.x + 15, this.y - 15, 6, 0, Math.PI * 2);
-        ctx.fill();
-    }
-}
-
-// 障碍物类
-class Obstacle {
-    constructor(x, y, width, height) {
-        this.x = x;
-        this.y = y;
-        this.width = width;
-        this.height = height;
-    }
-    
-    draw(ctx) {
-        // 木头纹理效果
-        const gradient = ctx.createLinearGradient(this.x, this.y, this.x + this.width, this.y + this.height);
-        gradient.addColorStop(0, '#DEB887');
-        gradient.addColorStop(0.5, '#D2B48C');
-        gradient.addColorStop(1, '#CD853F');
-        
-        ctx.fillStyle = gradient;
-        ctx.fillRect(this.x, this.y, this.width, this.height);
-        
-        // 边框
-        ctx.strokeStyle = '#8B4513';
-        ctx.lineWidth = 2;
-        ctx.strokeRect(this.x, this.y, this.width, this.height);
-        
-        // 木头纹理线条
-        ctx.strokeStyle = '#A0522D';
-        ctx.lineWidth = 1;
-        for (let i = 0; i < this.height; i += 10) {
-            ctx.beginPath();
-            ctx.moveTo(this.x, this.y + i);
-            ctx.lineTo(this.x + this.width, this.y + i);
-            ctx.stroke();
-        }
-    }
-}
-
-// 初始化游戏
-document.addEventListener('DOMContentLoaded', () => {
-    new AngryBirdsGame();
-});
