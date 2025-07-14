@@ -1,1 +1,1 @@
-# github_studyone
+这是一个我学习的痕迹的仓库。
