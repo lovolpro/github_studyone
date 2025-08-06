@@ -1,0 +1,65 @@
+{
+    // 启用括号配对着色
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.guides.bracketPairsHorizontal": "active",
+    "editor.guides.highlightActiveIndentation": true,
+    // 缩进指引线设置
+    "editor.guides.highlightActiveBracketPair": true, // 高亮活动括号对
+    "editor.indentSize": 4, // 缩进大小
+    "editor.tabSize": 4, // Tab大小
+    "editor.insertSpaces": true, // 使用空格而不是Tab
+    "editor.detectIndentation": true, // 自动检测缩进
+    // 字体设置
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontSize": 18,
+    "editor.fontWeight": "normal",
+    "editor.lineHeight": 1.8, // 行高
+    "editor.letterSpacing": 0.4, // 字符间距
+    // 其他相关设置
+    "editor.matchBrackets": "always",
+    "editor.renderWhitespace": "boundary",
+    // 代码编辑增强
+    "editor.wordWrap": "on", // 自动换行
+    "editor.minimap.enabled": true, // 显示代码缩略图
+    "editor.minimap.showSlider": "always", // 始终显示缩略图滑块
+    "editor.cursorBlinking": "smooth", // 光标平滑闪烁
+    "editor.cursorSmoothCaretAnimation": "on", // 光标平滑移动
+    "editor.smoothScrolling": true, // 平滑滚动
+    "editor.mouseWheelScrollSensitivity": 1, // 鼠标滚轮灵敏度
+    "editor.scrollbar.verticalScrollbarSize": 10, // 垂直滚动条大小
+    // 代码智能提示
+    "editor.suggestOnTriggerCharacters": true, // 触发字符时显示建议
+    "editor.acceptSuggestionOnEnter": "smart", // 智能回车接受建议
+    "editor.tabCompletion": "on", // Tab键补全
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": false
+    },
+    // 代码格式化
+    "editor.formatOnSave": true, // 保存时自动格式化
+    "editor.formatOnPaste": true, // 粘贴时自动格式化
+    "editor.formatOnType": true, // 输入时自动格式化
+    "editor.trimAutoWhitespace": true, // 自动删除尾随空格
+    "files.trimTrailingWhitespace": true, // 保存时删除尾随空格
+    "files.insertFinalNewline": true, // 文件末尾插入空行
+    // 搜索设置
+    "search.exclude": {
+        "**/build": true,
+        "**/Objects": true,
+        "**/Listings": true,
+        "**/*.o": true,
+        "**/*.d": true,
+        "**/*.axf": true,
+        "**/*.bin": true,
+        "**/*.hex": true
+    },
+    // Code Runner 配置
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc -std=c17 -Wall -Wextra -g $fileName -o build/$fileNameWithoutExt.exe && .\\build\\$fileNameWithoutExt.exe"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.clearPreviousOutput": false
+}
