@@ -20,7 +20,13 @@
     "editor.matchBrackets": "always",
     "editor.renderWhitespace": "boundary",
     // 代码编辑增强
-    "editor.wordWrap": "on", // 自动换行
+    "editor.renderControlCharacters": true, // 显示控制字符
+    "editor.renderLineHighlight": "all", // 高亮当前行
+    "editor.renderLineHighlightOnlyWhenFocus": false, // 始终高亮当前行
+    "editor.rulers": [100], // 代码行长度标尺
+    "editor.wordWrapColumn": 100, // 自动换行列数
+    "editor.wordWrap": "wordWrapColumn", // 自动换行方式
+    "editor.codeLens": true, // 显示代码透镜
     "editor.minimap.enabled": true, // 显示代码缩略图
     "editor.minimap.showSlider": "always", // 始终显示缩略图滑块
     "editor.cursorBlinking": "smooth", // 光标平滑闪烁
@@ -55,11 +61,4 @@
         "**/*.bin": true,
         "**/*.hex": true
     },
-    // Code Runner 配置
-    "code-runner.executorMap": {
-        "c": "cd $dir && gcc -std=c17 -Wall -Wextra -g $fileName -o build/$fileNameWithoutExt.exe && .\\build\\$fileNameWithoutExt.exe"
-    },
-    "code-runner.runInTerminal": true,
-    "code-runner.saveFileBeforeRun": true,
-    "code-runner.clearPreviousOutput": false
 }
