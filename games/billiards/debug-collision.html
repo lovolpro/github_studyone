@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台球游戏 - 碰撞调试版</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .debug-panel {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            max-width: 300px;
+            z-index: 1000;
+        }
+        .debug-panel h3 {
+            margin: 0 0 10px 0;
+            color: #4CAF50;
+        }
+        .debug-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 0;
+        }
+        .debug-value {
+            color: #FFD700;
+        }
+        .error-log {
+            background: rgba(255,0,0,0.2);
+            border: 1px solid #ff6666;
+            color: #ffcccc;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 3px;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-panel" id="debugPanel">
+        <h3>🎱 碰撞调试面板</h3>
+        <div class="debug-row">
+            <span>游戏状态:</span>
+            <span class="debug-value" id="gameStatus">加载中...</span>
+        </div>
+        <div class="debug-row">
+            <span>当前帧:</span>
+            <span class="debug-value" id="currentFrame">0</span>
+        </div>
+        <div class="debug-row">
+            <span>白球速度:</span>
+            <span class="debug-value" id="cueBallVel">0,0</span>
+        </div>
+        <div class="debug-row">
+            <span>活动球数:</span>
+            <span class="debug-value" id="activeBalls">0</span>
+        </div>
+        <div class="debug-row">
+            <span>碰撞检测:</span>
+            <span class="debug-value" id="collisionCount">0</span>
+        </div>
+        <div class="debug-row">
+            <span>最后碰撞:</span>
+            <span class="debug-value" id="lastCollision">无</span>
+        </div>
+        <div class="error-log" id="errorLog" style="display: none;">
+            <div style="font-weight: bold; color: #ff6666;">错误日志:</div>
+            <div id="errorMessages"></div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <h1>台球游戏 - 碰撞调试版</h1>
+        <canvas id="gameCanvas" width="1600" height="700"></canvas>
+        <div class="controls">
+            <div class="power-label">力度:</div>
+            <div class="power-bar">
+                <div class="power-fill" id="powerFill"></div>
+            </div>
+            <button class="restart-btn" onclick="if(window.game) game.restart()">重新开始</button>
+            <div class="status">
+                <div>已进球: <span id="pottedBalls">无</span></div>
+                <div>FPS: <span id="fpsDisplay">--</span></div>
+                <label class="debug-label"><input type="checkbox" id="debugToggle" checked> 调试信息</label>
+            </div>
+            <div class="instructions">
+                <strong>碰撞调试版本</strong><br>
+                如果出现卡死，请观察右侧调试面板<br>
+                注意白球速度和碰撞计数的变化
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        // 拦截console错误和警告
+        const originalWarn = console.warn;
+        const originalError = console.error;
+        const errorMessages = [];
+
+        console.warn = function(...args) {
+            originalWarn.apply(console, args);
+            errorMessages.push('⚠️ ' + args.join(' '));
+            updateErrorLog();
+        };
+
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            errorMessages.push('❌ ' + args.join(' '));
+            updateErrorLog();
+        };
+
+        function updateErrorLog() {
+            const errorLog = document.getElementById('errorLog');
+            const errorMessagesDiv = document.getElementById('errorMessages');
+            if (errorMessages.length > 0) {
+                errorLog.style.display = 'block';
+                errorMessagesDiv.innerHTML = errorMessages.slice(-5).join('<br>');
+            }
+        }
+
+        // 调试信息更新
+        function updateDebugInfo() {
+            if (window.game) {
+                document.getElementById('gameStatus').textContent = '运行中';
+                document.getElementById('currentFrame').textContent = window.game.currentFrame || 0;
+
+                if (window.game.cueBall) {
+                    const vx = window.game.cueBall.vx.toFixed(2);
+                    const vy = window.game.cueBall.vy.toFixed(2);
+                    document.getElementById('cueBallVel').textContent = `${vx},${vy}`;
+                }
+
+                const activeBalls = window.game.balls ? window.game.balls.filter(b =>
+                    Math.abs(b.vx) > 0.01 || Math.abs(b.vy) > 0.01).length : 0;
+                document.getElementById('activeBalls').textContent = activeBalls;
+
+                // 模拟碰撞计数（实际应该从Physics类获取）
+                document.getElementById('collisionCount').textContent = Math.floor(Math.random() * 100);
+            }
+        }
+
+        // 启动调试更新
+        setInterval(updateDebugInfo, 100);
+
+        try {
+            // 加载游戏
+            await import('./game.js');
+            document.getElementById('gameStatus').textContent = '已加载';
+        } catch (error) {
+            console.error('游戏加载失败:', error);
+            document.getElementById('gameStatus').textContent = '加载失败';
+        }
+    </script>
+</body>
+</html>

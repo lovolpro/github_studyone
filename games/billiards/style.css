@@ -1,0 +1,158 @@
+/* 台球游戏样式文件 */
+
+body {
+    margin: 0;
+    padding: 5px;
+    background-color: #2d5016;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; /* 防止滚动 */
+}
+
+.game-container {
+    text-align: center;
+    overflow: visible; /* 允许内容溢出 */
+    position: relative;
+}
+
+canvas {
+    border: 10px solid #8B4513;
+    border-radius: 10px;
+    background-color: #0f5132;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    overflow: visible; /* 允许canvas内容溢出 */
+    position: relative;
+    z-index: 1;
+}
+
+.controls {
+    margin-top: 20px;
+    color: white;
+}
+
+.status {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.debug-label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.power-bar {
+    width: 200px;
+    height: 20px;
+    border: 2px solid white;
+    margin: 10px auto;
+    position: relative;
+    background-color: #333;
+}
+
+.power-fill {
+    height: 100%;
+    background: linear-gradient(to right, green, yellow, red);
+    width: 0%;
+    transition: width 0.1s;
+}
+
+.instructions {
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.restart-btn {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.restart-btn:hover {
+    background-color: #45a049;
+}
+
+/* 游戏标题样式 */
+h1 {
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* 力度显示样式 */
+.power-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1650px), (max-height: 750px) {
+    body {
+        padding: 2px;
+    }
+
+    canvas {
+        width: 95vw;
+        height: 85vh;
+        max-width: 1600px;
+        max-height: 700px;
+    }
+
+    .power-bar {
+        width: 150px;
+    }
+
+    .instructions {
+        font-size: 12px;
+    }
+
+    .game-container h1 {
+        margin: 5px 0;
+        font-size: 24px;
+    }
+
+    .controls {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 900px) {
+    body {
+        padding: 2px;
+    }
+
+    canvas {
+        width: 98vw;
+        height: 80vh;
+    }
+
+    .power-bar {
+        width: 120px;
+    }
+
+    .instructions {
+        font-size: 10px;
+    }
+
+    .game-container h1 {
+        margin: 2px 0;
+        font-size: 20px;
+    }
+}

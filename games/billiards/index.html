@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台球游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>台球游戏</h1>
+        <canvas id="gameCanvas" width="1600" height="700"></canvas>
+        <div class="controls">
+            <div class="power-label">力度:</div>
+            <div class="power-bar">
+                <div class="power-fill" id="powerFill"></div>
+            </div>
+            <button class="restart-btn" onclick="game.restart()">重新开始</button>
+            <div class="status">
+                <div>已进球: <span id="pottedBalls"></span></div>
+                <div>FPS: <span id="fpsDisplay">--</span></div>
+                <label class="debug-label"><input type="checkbox" id="debugToggle"> 调试信息</label>
+            </div>
+            <div class="instructions">
+                点击白球拖拽瞄准，松开鼠标击球<br>
+                拖得越远力度越大（或看上方彩色力度条）<br>
+                <strong>真实物理效果：击球偏移、旋转、台边碰撞</strong><br>
+                <strong>6个球袋位置符合标准台球桌设计</strong><br>
+                <strong>白球进袋会重置位置</strong><br>
+                按 D 键 / 勾选调试显示：速度向量、碰撞包围、预测线路<br>
+                <br>
+                <strong style="color: #4CAF50;">🎯 新特性：</strong><br>
+                • 白球击打目标球后的路径预测<br>
+                • 球袋弧形裁切避免视觉穿帮<br>
+                • 真实下落动画（缩放与透明度）<br>
+                • 模块化架构（ES Modules）
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+</body>
+</html>

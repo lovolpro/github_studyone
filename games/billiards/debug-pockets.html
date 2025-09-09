@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台球游戏 - 进袋测试版</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pocket-debug {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            max-width: 250px;
+            z-index: 1000;
+        }
+        .pocket-debug h3 {
+            margin: 0 0 10px 0;
+            color: #4CAF50;
+        }
+        .pocket-log {
+            background: rgba(0,100,0,0.2);
+            border: 1px solid #66ff66;
+            color: #ccffcc;
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 3px;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .ball-status {
+            display: flex;
+            justify-content: space-between;
+            margin: 2px 0;
+            font-size: 11px;
+        }
+        .ball-status.active {
+            color: #FFD700;
+        }
+        .ball-status.potted {
+            color: #ff6666;
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="pocket-debug" id="pocketDebug">
+        <h3>🕳️ 进袋测试面板</h3>
+        <div>球总数: <span id="totalBalls">16</span></div>
+        <div>剩余球: <span id="remainingBalls">16</span></div>
+        <div>已进球: <span id="pottedBalls">0</span></div>
+        <div style="margin-top: 10px; font-size: 11px;">
+            <div>球状态:</div>
+            <div id="ballStatus"></div>
+        </div>
+        <div class="pocket-log" id="pocketLog">
+            <div style="font-weight: bold; color: #66ff66;">进袋日志:</div>
+            <div id="pocketMessages">等待进袋...</div>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <h1>台球游戏 - 进袋测试版</h1>
+        <canvas id="gameCanvas" width="1600" height="700"></canvas>
+        <div class="controls">
+            <div class="power-label">力度:</div>
+            <div class="power-bar">
+                <div class="power-fill" id="powerFill"></div>
+            </div>
+            <button class="restart-btn" onclick="if(window.game) game.restart()">重新开始</button>
+            <div class="status">
+                <div>已进球: <span id="pottedBallsMain">无</span></div>
+                <div>FPS: <span id="fpsDisplay">--</span></div>
+                <label class="debug-label"><input type="checkbox" id="debugToggle" checked> 调试信息</label>
+            </div>
+            <div class="instructions">
+                <strong>进袋测试版本</strong><br>
+                尝试击球进袋，观察左侧面板的日志<br>
+                如果出现卡死，日志会停止更新
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        const pocketMessages = [];
+        let originalBallCount = 16;
+
+        function addPocketLog(message) {
+            pocketMessages.push(new Date().toLocaleTimeString() + ': ' + message);
+            document.getElementById('pocketMessages').innerHTML = pocketMessages.slice(-10).join('<br>');
+        }
+
+        function updateBallStatus() {
+            if (window.game && window.game.balls) {
+                const remaining = window.game.balls.length;
+                const potted = originalBallCount - remaining;
+
+                document.getElementById('totalBalls').textContent = originalBallCount;
+                document.getElementById('remainingBalls').textContent = remaining;
+                document.getElementById('pottedBalls').textContent = potted;
+
+                // 显示球状态
+                const statusDiv = document.getElementById('ballStatus');
+                let statusHTML = '';
+
+                // 显示剩余的球
+                window.game.balls.forEach(ball => {
+                    const isMoving = Math.abs(ball.vx) > 0.01 || Math.abs(ball.vy) > 0.01;
+                    const className = isMoving ? 'active' : '';
+                    const ballName = ball.number === null ? '白球' : ball.number + '号';
+                    statusHTML += `<div class="ball-status ${className}">${ballName}: 在桌</div>`;
+                });
+
+                // 显示已进袋的球
+                if (window.game.potted) {
+                    window.game.potted.forEach(num => {
+                        statusHTML += `<div class="ball-status potted">${num}号: 进袋</div>`;
+                    });
+                }
+
+                statusDiv.innerHTML = statusHTML;
+            }
+        }
+
+        // 拦截进袋事件
+        function interceptPocketEvents() {
+            if (window.game && window.game.physics) {
+                const originalCheckPockets = window.game.physics.checkPockets;
+                window.game.physics.checkPockets = function(balls, pockets, cueBall, tableConfig, callbacks) {
+                    // 记录调用
+                    addPocketLog('检查进袋: ' + balls.length + ' 个球');
+
+                    // 增强回调
+                    const enhancedCallbacks = {
+                        onCueBallPocketed: () => {
+                            addPocketLog('🎱 白球进袋！');
+                            if (callbacks.onCueBallPocketed) callbacks.onCueBallPocketed();
+                        },
+                        onBallPocketed: (ball) => {
+                            addPocketLog(`⚫ ${ball.number}号球进袋！`);
+                            if (callbacks.onBallPocketed) callbacks.onBallPocketed(ball);
+                        }
+                    };
+
+                    try {
+                        return originalCheckPockets.call(this, balls, pockets, cueBall, tableConfig, enhancedCallbacks);
+                    } catch (error) {
+                        addPocketLog('❌ 进袋检测错误: ' + error.message);
+                        console.error('进袋检测错误:', error);
+                    }
+                };
+            }
+        }
+
+        // 定期更新状态
+        setInterval(updateBallStatus, 200);
+
+        try {
+            // 加载游戏
+            await import('./game.js');
+            addPocketLog('✅ 游戏加载成功');
+
+            // 等待一点时间让游戏初始化
+            setTimeout(() => {
+                interceptPocketEvents();
+                addPocketLog('🔧 进袋监控已启动');
+            }, 1000);
+
+        } catch (error) {
+            addPocketLog('❌ 游戏加载失败: ' + error.message);
+            console.error('游戏加载失败:', error);
+        }
+    </script>
+</body>
+</html>

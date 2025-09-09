@@ -279,3 +279,962 @@ events:
         
       exitCode: 2
 ...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/Record/build/CMakeFiles/3.30.5-msvc23/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qoekdq"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qoekdq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qoekdq'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_cbb0c/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_cbb0c.dir\\build.make CMakeFiles/cmTC_cbb0c.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qoekdq'
+        Building CXX object CMakeFiles/cmTC_cbb0c.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_cbb0c.dir\\CMakeCXXCompilerABI.cpp.obj -c "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+        Thread model: posix
+        gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cbb0c.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=core2 -march=nocona -auxbase-strip CMakeFiles\\cmTC_cbb0c.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\JC\\AppData\\Local\\Temp\\ccq3ZyRU.s
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../include"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 82f0c9785fd37a38ba7b7f8357369a82
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cbb0c.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_cbb0c.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JC\\AppData\\Local\\Temp\\ccq3ZyRU.s
+        GNU assembler version 2.30 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.30
+        COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_cbb0c.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+        Linking CXX executable cmTC_cbb0c.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_cbb0c.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_cbb0c.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_cbb0c.dir/objects.a @CMakeFiles\\cmTC_cbb0c.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_cbb0c.dir\\build.make:99: cmTC_cbb0c.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qoekdq'
+        mingw32-make.exe: *** [Makefile:126: cmTC_cbb0c/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: D:/mingw64/bin/g++.exe"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-8wr0cv"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-8wr0cv"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-8wr0cv'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_60ba3/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_60ba3.dir\\build.make CMakeFiles/cmTC_60ba3.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-8wr0cv'
+        Building CXX object CMakeFiles/cmTC_60ba3.dir/testCXXCompiler.cxx.obj
+        D:\\mingw64\\bin\\g++.exe    -o CMakeFiles\\cmTC_60ba3.dir\\testCXXCompiler.cxx.obj -c E:\\Record\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8wr0cv\\testCXXCompiler.cxx
+        Linking CXX executable cmTC_60ba3.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_60ba3.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_60ba3.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_60ba3.dir/objects.a @CMakeFiles\\cmTC_60ba3.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_60ba3.dir\\build.make:100: cmTC_60ba3.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-8wr0cv'
+        mingw32-make.exe: *** [Makefile:126: cmTC_60ba3/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/Record/build/CMakeFiles/3.30.5-msvc23/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-6hd81w"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-6hd81w"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-6hd81w'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_b04b2/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_b04b2.dir\\build.make CMakeFiles/cmTC_b04b2.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-6hd81w'
+        Building CXX object CMakeFiles/cmTC_b04b2.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_b04b2.dir\\CMakeCXXCompilerABI.cpp.obj -c "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+        Thread model: posix
+        gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b04b2.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=core2 -march=nocona -auxbase-strip CMakeFiles\\cmTC_b04b2.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\JC\\AppData\\Local\\Temp\\ccmM3LXi.s
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../include"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 82f0c9785fd37a38ba7b7f8357369a82
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b04b2.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_b04b2.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JC\\AppData\\Local\\Temp\\ccmM3LXi.s
+        GNU assembler version 2.30 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.30
+        COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_b04b2.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+        Linking CXX executable cmTC_b04b2.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_b04b2.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_b04b2.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_b04b2.dir/objects.a @CMakeFiles\\cmTC_b04b2.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_b04b2.dir\\build.make:99: cmTC_b04b2.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-6hd81w'
+        mingw32-make.exe: *** [Makefile:126: cmTC_b04b2/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: D:/mingw64/bin/g++.exe"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qqjcn1"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qqjcn1"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qqjcn1'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_78045/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_78045.dir\\build.make CMakeFiles/cmTC_78045.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qqjcn1'
+        Building CXX object CMakeFiles/cmTC_78045.dir/testCXXCompiler.cxx.obj
+        D:\\mingw64\\bin\\g++.exe    -o CMakeFiles\\cmTC_78045.dir\\testCXXCompiler.cxx.obj -c E:\\Record\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qqjcn1\\testCXXCompiler.cxx
+        Linking CXX executable cmTC_78045.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_78045.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_78045.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_78045.dir/objects.a @CMakeFiles\\cmTC_78045.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_78045.dir\\build.make:100: cmTC_78045.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-qqjcn1'
+        mingw32-make.exe: *** [Makefile:126: cmTC_78045/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/Record/build/CMakeFiles/3.30.5-msvc23/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-963aec"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-963aec"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-963aec'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_ecd66/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_ecd66.dir\\build.make CMakeFiles/cmTC_ecd66.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-963aec'
+        Building CXX object CMakeFiles/cmTC_ecd66.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_ecd66.dir\\CMakeCXXCompilerABI.cpp.obj -c "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+        Thread model: posix
+        gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd66.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=core2 -march=nocona -auxbase-strip CMakeFiles\\cmTC_ecd66.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\JC\\AppData\\Local\\Temp\\ccXRz0f6.s
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../include"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 82f0c9785fd37a38ba7b7f8357369a82
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd66.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_ecd66.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JC\\AppData\\Local\\Temp\\ccXRz0f6.s
+        GNU assembler version 2.30 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.30
+        COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_ecd66.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+        Linking CXX executable cmTC_ecd66.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_ecd66.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_ecd66.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_ecd66.dir/objects.a @CMakeFiles\\cmTC_ecd66.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_ecd66.dir\\build.make:99: cmTC_ecd66.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-963aec'
+        mingw32-make.exe: *** [Makefile:126: cmTC_ecd66/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: D:/mingw64/bin/g++.exe"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-cta4uf"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-cta4uf"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-cta4uf'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_95b2a/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_95b2a.dir\\build.make CMakeFiles/cmTC_95b2a.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-cta4uf'
+        Building CXX object CMakeFiles/cmTC_95b2a.dir/testCXXCompiler.cxx.obj
+        D:\\mingw64\\bin\\g++.exe    -o CMakeFiles\\cmTC_95b2a.dir\\testCXXCompiler.cxx.obj -c E:\\Record\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cta4uf\\testCXXCompiler.cxx
+        Linking CXX executable cmTC_95b2a.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_95b2a.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_95b2a.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_95b2a.dir/objects.a @CMakeFiles\\cmTC_95b2a.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_95b2a.dir\\build.make:100: cmTC_95b2a.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-cta4uf'
+        mingw32-make.exe: *** [Makefile:126: cmTC_95b2a/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/Record/build/CMakeFiles/3.30.5-msvc23/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-wg19r3"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-wg19r3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-wg19r3'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_c8039/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c8039.dir\\build.make CMakeFiles/cmTC_c8039.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-wg19r3'
+        Building CXX object CMakeFiles/cmTC_c8039.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_c8039.dir\\CMakeCXXCompilerABI.cpp.obj -c "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+        Thread model: posix
+        gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c8039.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=core2 -march=nocona -auxbase-strip CMakeFiles\\cmTC_c8039.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\JC\\AppData\\Local\\Temp\\ccwEtFzJ.s
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../include"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 82f0c9785fd37a38ba7b7f8357369a82
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c8039.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_c8039.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JC\\AppData\\Local\\Temp\\ccwEtFzJ.s
+        GNU assembler version 2.30 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.30
+        COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_c8039.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+        Linking CXX executable cmTC_c8039.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c8039.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c8039.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_c8039.dir/objects.a @CMakeFiles\\cmTC_c8039.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_c8039.dir\\build.make:99: cmTC_c8039.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-wg19r3'
+        mingw32-make.exe: *** [Makefile:126: cmTC_c8039/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: D:/mingw64/bin/g++.exe"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-mbpz6c"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-mbpz6c"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-mbpz6c'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_0bdc0/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_0bdc0.dir\\build.make CMakeFiles/cmTC_0bdc0.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-mbpz6c'
+        Building CXX object CMakeFiles/cmTC_0bdc0.dir/testCXXCompiler.cxx.obj
+        D:\\mingw64\\bin\\g++.exe    -o CMakeFiles\\cmTC_0bdc0.dir\\testCXXCompiler.cxx.obj -c E:\\Record\\build\\CMakeFiles\\CMakeScratch\\TryCompile-mbpz6c\\testCXXCompiler.cxx
+        Linking CXX executable cmTC_0bdc0.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_0bdc0.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_0bdc0.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_0bdc0.dir/objects.a @CMakeFiles\\cmTC_0bdc0.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_0bdc0.dir\\build.make:100: cmTC_0bdc0.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-mbpz6c'
+        mingw32-make.exe: *** [Makefile:126: cmTC_0bdc0/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/Record/build/CMakeFiles/3.30.5-msvc23/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-09jqwt"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-09jqwt"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-09jqwt'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_fc5fb/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_fc5fb.dir\\build.make CMakeFiles/cmTC_fc5fb.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-09jqwt'
+        Building CXX object CMakeFiles/cmTC_fc5fb.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_fc5fb.dir\\CMakeCXXCompilerABI.cpp.obj -c "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+        Thread model: posix
+        gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_fc5fb.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=core2 -march=nocona -auxbase-strip CMakeFiles\\cmTC_fc5fb.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\JC\\AppData\\Local\\Temp\\ccOKxrec.s
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../include"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 82f0c9785fd37a38ba7b7f8357369a82
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_fc5fb.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_fc5fb.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JC\\AppData\\Local\\Temp\\ccOKxrec.s
+        GNU assembler version 2.30 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.30
+        COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_fc5fb.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+        Linking CXX executable cmTC_fc5fb.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_fc5fb.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_fc5fb.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_fc5fb.dir/objects.a @CMakeFiles\\cmTC_fc5fb.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_fc5fb.dir\\build.make:99: cmTC_fc5fb.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-09jqwt'
+        mingw32-make.exe: *** [Makefile:126: cmTC_fc5fb/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: D:/mingw64/bin/g++.exe"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-ew6eqr"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-ew6eqr"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-ew6eqr'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_458cc/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_458cc.dir\\build.make CMakeFiles/cmTC_458cc.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-ew6eqr'
+        Building CXX object CMakeFiles/cmTC_458cc.dir/testCXXCompiler.cxx.obj
+        D:\\mingw64\\bin\\g++.exe    -o CMakeFiles\\cmTC_458cc.dir\\testCXXCompiler.cxx.obj -c E:\\Record\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ew6eqr\\testCXXCompiler.cxx
+        Linking CXX executable cmTC_458cc.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_458cc.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_458cc.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_458cc.dir/objects.a @CMakeFiles\\cmTC_458cc.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_458cc.dir\\build.make:100: cmTC_458cc.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-ew6eqr'
+        mingw32-make.exe: *** [Makefile:126: cmTC_458cc/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/Record/build/CMakeFiles/3.30.5-msvc23/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-eymy75"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-eymy75"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-eymy75'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_d0671/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_d0671.dir\\build.make CMakeFiles/cmTC_d0671.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-eymy75'
+        Building CXX object CMakeFiles/cmTC_d0671.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_d0671.dir\\CMakeCXXCompilerABI.cpp.obj -c "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+        Thread model: posix
+        gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d0671.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=core2 -march=nocona -auxbase-strip CMakeFiles\\cmTC_d0671.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\JC\\AppData\\Local\\Temp\\ccVp1rb3.s
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../include"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 82f0c9785fd37a38ba7b7f8357369a82
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d0671.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_d0671.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JC\\AppData\\Local\\Temp\\ccVp1rb3.s
+        GNU assembler version 2.30 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.30
+        COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_d0671.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+        Linking CXX executable cmTC_d0671.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_d0671.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_d0671.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_d0671.dir/objects.a @CMakeFiles\\cmTC_d0671.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_d0671.dir\\build.make:99: cmTC_d0671.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-eymy75'
+        mingw32-make.exe: *** [Makefile:126: cmTC_d0671/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: D:/mingw64/bin/g++.exe"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-5fabj4"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-5fabj4"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-5fabj4'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_2925f/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_2925f.dir\\build.make CMakeFiles/cmTC_2925f.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-5fabj4'
+        Building CXX object CMakeFiles/cmTC_2925f.dir/testCXXCompiler.cxx.obj
+        D:\\mingw64\\bin\\g++.exe    -o CMakeFiles\\cmTC_2925f.dir\\testCXXCompiler.cxx.obj -c E:\\Record\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5fabj4\\testCXXCompiler.cxx
+        Linking CXX executable cmTC_2925f.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_2925f.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_2925f.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_2925f.dir/objects.a @CMakeFiles\\cmTC_2925f.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_2925f.dir\\build.make:100: cmTC_2925f.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-5fabj4'
+        mingw32-make.exe: *** [Makefile:126: cmTC_2925f/fast] Error 2
+        
+      exitCode: 2
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/mingw64/bin/g++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        E:/Record/build/CMakeFiles/3.30.5-msvc23/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-jd5ga4"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-jd5ga4"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-jd5ga4'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_0ea91/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_0ea91.dir\\build.make CMakeFiles/cmTC_0ea91.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-jd5ga4'
+        Building CXX object CMakeFiles/cmTC_0ea91.dir/CMakeCXXCompilerABI.cpp.obj
+        D:\\mingw64\\bin\\g++.exe   -v -o CMakeFiles\\cmTC_0ea91.dir\\CMakeCXXCompilerABI.cpp.obj -c "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\mingw64\\bin\\g++.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-8.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-mpc=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-isl=/c/mingw810/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev0, Built by MinGW-W64 project' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/include -I/c/mingw810/prerequisites/x86_64-zlib-static/include -I/c/mingw810/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/c/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/opt/lib -L/c/mingw810/prerequisites/x86_64-zlib-static/lib -L/c/mingw810/prerequisites/x86_64-w64-mingw32-static/lib '
+        Thread model: posix
+        gcc version 8.1.0 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0ea91.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/cc1plus.exe -quiet -v -iprefix D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/ -D_REENTRANT D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=core2 -march=nocona -auxbase-strip CMakeFiles\\cmTC_0ea91.dir\\CMakeCXXCompilerABI.cpp.obj -version -o C:\\Users\\JC\\AppData\\Local\\Temp\\ccSWg5lL.s
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../include"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+        ignoring duplicate directory "D:/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/mingw810/x86_64-810-posix-seh-rt_v6-rev0/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C++14 (x86_64-posix-seh-rev0, Built by MinGW-W64 project) version 8.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 8.1.0, GMP version 6.1.2, MPFR version 4.0.1, MPC version 1.1.0, isl version isl-0.18-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 82f0c9785fd37a38ba7b7f8357369a82
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0ea91.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+         D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles\\cmTC_0ea91.dir\\CMakeCXXCompilerABI.cpp.obj C:\\Users\\JC\\AppData\\Local\\Temp\\ccSWg5lL.s
+        GNU assembler version 2.30 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.30
+        COMPILER_PATH=D:/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../libexec/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/;D:/mingw64/bin/../lib/gcc/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/lib/;D:/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles\\cmTC_0ea91.dir\\CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona'
+        Linking CXX executable cmTC_0ea91.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_0ea91.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_0ea91.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_0ea91.dir/objects.a @CMakeFiles\\cmTC_0ea91.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_0ea91.dir\\build.make:99: cmTC_0ea91.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-jd5ga4'
+        mingw32-make.exe: *** [Makefile:126: cmTC_0ea91/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.30/Modules/CMakeTestCXXCompiler.cmake:56 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: D:/mingw64/bin/g++.exe"
+    directories:
+      source: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-m9b10j"
+      binary: "E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-m9b10j"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-m9b10j'
+        
+        Run Build Command(s): "D:/vs studio2022/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 D:/mingw64/bin/mingw32-make.exe -f Makefile cmTC_c5b5e/fast
+        D:/mingw64/bin/mingw32-make.exe  -f CMakeFiles\\cmTC_c5b5e.dir\\build.make CMakeFiles/cmTC_c5b5e.dir/build
+        mingw32-make.exe[1]: Entering directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-m9b10j'
+        Building CXX object CMakeFiles/cmTC_c5b5e.dir/testCXXCompiler.cxx.obj
+        D:\\mingw64\\bin\\g++.exe    -o CMakeFiles\\cmTC_c5b5e.dir\\testCXXCompiler.cxx.obj -c E:\\Record\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m9b10j\\testCXXCompiler.cxx
+        Linking CXX executable cmTC_c5b5e.exe
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E cmake_link_script CMakeFiles\\cmTC_c5b5e.dir\\link.txt --verbose=1
+        "D:\\vs studio2022\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E rm -f CMakeFiles\\cmTC_c5b5e.dir/objects.a
+        CMAKE_AR-NOTFOUND qc CMakeFiles\\cmTC_c5b5e.dir/objects.a @CMakeFiles\\cmTC_c5b5e.dir\\objects1.rsp
+        Error running link command: no such file or directorymingw32-make.exe[1]: *** [CMakeFiles\\cmTC_c5b5e.dir\\build.make:100: cmTC_c5b5e.exe] Error 2
+        mingw32-make.exe[1]: Leaving directory 'E:/Record/build/CMakeFiles/CMakeScratch/TryCompile-m9b10j'
+        mingw32-make.exe: *** [Makefile:126: cmTC_c5b5e/fast] Error 2
+        
+      exitCode: 2
+...
